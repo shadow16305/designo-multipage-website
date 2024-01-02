@@ -1,6 +1,6 @@
-import HeroHome from "@/components/HomePage/HeroHome";
-import HomeCards from "@/components/HomePage/HomeCards";
-import HomeFeatures from "@/components/HomePage/HomeFeatures";
+import HeroHome from "@/components/Layout/HeroHome";
+import HomeCards from "@/components/Layout/HomeCards";
+import HomeFeatures from "@/components/Layout/HomeFeatures";
 
 const HomePage = () => {
   return (

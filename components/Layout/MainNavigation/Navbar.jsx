@@ -3,8 +3,8 @@ import { AnimatePresence } from "framer-motion";
 
 import Link from "next/link";
 import Image from "next/image";
-import Hamburger from "../UI/Hamburger";
-import DropdownMobile from "./DropdownMobile";
+import Hamburger from "../../UI/Hamburger";
+import DropdownMobile from "../DropdownMobile";
 
 const navlinks = [
   {

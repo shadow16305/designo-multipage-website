@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import ContactQuicklink from "../UI/ContactQuicklink";
+import ContactQuicklink from "../../UI/ContactQuicklink";
 
 const navlinks = [
   {

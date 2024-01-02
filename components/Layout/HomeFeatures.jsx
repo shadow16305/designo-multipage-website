@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-import FeaturesLayout from "../Layout/FeaturesLayout";
+import FeaturesLayout from "./FeaturesLayout";
 import { opacityVariants } from "@/Tools/variants";
 
 const features = [
