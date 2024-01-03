@@ -31,6 +31,7 @@ const DropdownMobile = (props) => {
             <Link
               key={link.id}
               href={link.path}
+              onClick={props.onClick}
               className="text-2xl tracking-[2px] text-white uppercase font-normal"
             >
               {link.text}

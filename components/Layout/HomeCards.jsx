@@ -3,16 +3,18 @@ import { motion } from "framer-motion";
 import { fromBottom, fromRight, fromRightTwo } from "@/Tools/variants";
 import DesignCards from "../UI/DesignCards";
 
-const isMobile = window.innerWidth < 768;
-
 let cardPositionBottom = {};
 let cardPositionRight = {};
 let cardPositionRightTwo = {};
 
-if (!isMobile) {
-  cardPositionBottom = fromBottom;
-  cardPositionRight = fromRight;
-  cardPositionRightTwo = fromRightTwo;
+if (typeof window !== "undefined") {
+  const isMobile = window.innerWidth < 768;
+
+  if (!isMobile) {
+    cardPositionBottom = fromBottom;
+    cardPositionRight = fromRight;
+    cardPositionRightTwo = fromRightTwo;
+  }
 }
 
 const HomeCards = () => {

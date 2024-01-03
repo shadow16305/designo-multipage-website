@@ -53,7 +53,12 @@ const Navbar = () => {
         <Hamburger value={{ isOpen, setIsOpen }} />
       </div>
       <AnimatePresence mode="wait">
-        {isOpen && <DropdownMobile navlinks={navlinks} />}
+        {isOpen && (
+          <DropdownMobile
+            navlinks={navlinks}
+            onClick={() => setIsOpen(false)}
+          />
+        )}
       </AnimatePresence>
     </div>
   );

@@ -2,13 +2,13 @@ import { motion } from "framer-motion";
 
 import FeaturesLayout from "./FeaturesLayout";
 import { opacityVariants } from "@/Tools/variants";
-
-const isMobile = window.innerWidth < 768;
-
 let opacity = {};
+if (typeof window !== "undefined") {
+  const isMobile = window.innerWidth < 768;
 
-if (!isMobile) {
-  opacity = opacityVariants;
+  if (!isMobile) {
+    opacity = opacityVariants;
+  }
 }
 
 const features = [

@@ -4,12 +4,14 @@ import CardWrapper from "../UI/CardWrapper";
 import Form from "./Form";
 import { fromBottom } from "@/Tools/variants";
 
-const isMobile = window.innerWidth < 768;
-
 let cardPositionBottom = {};
 
-if (!isMobile) {
-  cardPositionBottom = fromBottom;
+if (typeof window !== "undefined") {
+  const isMobile = window.innerWidth < 768;
+
+  if (!isMobile) {
+    cardPositionBottom = fromBottom;
+  }
 }
 
 const ContactLayout = () => {

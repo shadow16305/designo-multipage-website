@@ -4,12 +4,14 @@ import LocationQuickLinkLayout from "@/components/Layout/LocationQuickLinkLayout
 
 import ContactLayout from "@/components/Layout/ContactLayout";
 
-const isMobile = window.innerWidth < 768;
-
 let opacity = {};
 
-if (!isMobile) {
-  opacity = opacityVariants;
+if (typeof window !== "undefined") {
+  const isMobile = window.innerWidth < 768;
+
+  if (!isMobile) {
+    opacity = opacityVariants;
+  }
 }
 
 const quicklinks = [
