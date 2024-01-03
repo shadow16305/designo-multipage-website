@@ -4,14 +4,16 @@ import { fromBottom, opacityVariants } from "@/Tools/variants";
 import AboutLayout from "@/components/Layout/AboutLayout";
 import LocationQuickLinkLayout from "@/components/Layout/LocationQuickLinkLayout";
 
-const isMobile = window.innerWidth < 768;
-
 let cardPositionBottom = {};
 let opacity = {};
 
-if (!isMobile) {
-  cardPositionBottom = fromBottom;
-  opacity = opacityVariants;
+if (typeof window !== "undefined") {
+  const isMobile = window.innerWidth < 768;
+
+  if (!isMobile) {
+    cardPositionBottom = fromBottom;
+    opacity = opacityVariants;
+  }
 }
 
 const quicklinks = [
