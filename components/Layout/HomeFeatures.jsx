@@ -3,6 +3,14 @@ import { motion } from "framer-motion";
 import FeaturesLayout from "./FeaturesLayout";
 import { opacityVariants } from "@/Tools/variants";
 
+const isMobile = window.innerWidth < 768;
+
+let opacity = {};
+
+if (!isMobile) {
+  opacity = opacityVariants;
+}
+
 const features = [
   {
     id: "f1",
@@ -33,7 +41,7 @@ const HomeFeatures = () => {
       initial="offscreen"
       whileInView="onscreen"
       viewport={{ once: true, amount: 0.8 }}
-      variants={opacityVariants}
+      variants={opacity}
       className="flex flex-col lg:flex-row gap-8 mt-40 items-center
       justify-center text-center"
     >

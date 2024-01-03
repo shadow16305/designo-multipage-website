@@ -3,6 +3,18 @@ import { motion } from "framer-motion";
 import { fromBottom, fromRight, fromRightTwo } from "@/Tools/variants";
 import DesignCards from "../UI/DesignCards";
 
+const isMobile = window.innerWidth < 768;
+
+let cardPositionBottom = {};
+let cardPositionRight = {};
+let cardPositionRightTwo = {};
+
+if (!isMobile) {
+  cardPositionBottom = fromBottom;
+  cardPositionRight = fromRight;
+  cardPositionRightTwo = fromRightTwo;
+}
+
 const HomeCards = () => {
   return (
     <div className="flex flex-col lg:flex-row gap-x-[30px] text-white mt-40 px-2 lg:px-0 w-full">
@@ -10,7 +22,7 @@ const HomeCards = () => {
         initial="offscreen"
         whileInView="onscreen"
         viewport={{ once: true, amount: 0.8 }}
-        variants={fromBottom}
+        variants={cardPositionBottom}
         className="lg:w-1/2"
       >
         <DesignCards
@@ -24,7 +36,7 @@ const HomeCards = () => {
           initial="offscreen"
           whileInView="onscreen"
           viewport={{ once: true, amount: 0.8 }}
-          variants={fromRight}
+          variants={cardPositionRight}
         >
           <DesignCards
             title="GRAPHIC DESIGN"
@@ -36,7 +48,7 @@ const HomeCards = () => {
           initial="offscreen"
           whileInView="onscreen"
           viewport={{ once: true, amount: 0.8 }}
-          variants={fromRightTwo}
+          variants={cardPositionRightTwo}
         >
           <DesignCards
             title="APP DESIGN"

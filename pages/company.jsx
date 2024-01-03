@@ -4,6 +4,16 @@ import { fromBottom, opacityVariants } from "@/Tools/variants";
 import AboutLayout from "@/components/Layout/AboutLayout";
 import LocationQuickLinkLayout from "@/components/Layout/LocationQuickLinkLayout";
 
+const isMobile = window.innerWidth < 768;
+
+let cardPositionBottom = {};
+let opacity = {};
+
+if (!isMobile) {
+  cardPositionBottom = fromBottom;
+  opacity = opacityVariants;
+}
+
 const quicklinks = [
   {
     id: "q1",
@@ -29,7 +39,7 @@ const company = () => {
         initial="offscreen"
         whileInView="onscreen"
         viewport={{ once: true, amount: 0.8 }}
-        variants={fromBottom}
+        variants={cardPositionBottom}
       >
         <AboutLayout
           title="About Us"
@@ -44,7 +54,7 @@ const company = () => {
         initial="offscreen"
         whileInView="onscreen"
         viewport={{ once: true, amount: 0.8 }}
-        variants={fromBottom}
+        variants={cardPositionBottom}
       >
         <AboutLayout
           title="World-class talent"
@@ -62,7 +72,7 @@ const company = () => {
         initial="offscreen"
         whileInView="onscreen"
         viewport={{ once: true, amount: 0.8 }}
-        variants={opacityVariants}
+        variants={opacity}
         className="flex flex-col lg:flex-row lg:justify-between items-center mt-40 lg:w-11/12 lg:mx-auto gap-y-8 lg:gap-y-0"
       >
         {quicklinks.map((item) => (
@@ -77,7 +87,7 @@ const company = () => {
         initial="offscreen"
         whileInView="onscreen"
         viewport={{ once: true, amount: 0.8 }}
-        variants={fromBottom}
+        variants={cardPositionBottom}
       >
         <AboutLayout
           title="The real deal"
