@@ -4,6 +4,14 @@ import LocationQuickLinkLayout from "@/components/Layout/LocationQuickLinkLayout
 
 import ContactLayout from "@/components/Layout/ContactLayout";
 
+const isMobile = window.innerWidth < 768;
+
+let opacity = {};
+
+if (!isMobile) {
+  opacity = opacityVariants;
+}
+
 const quicklinks = [
   {
     id: "q1",
@@ -30,7 +38,7 @@ const contact = () => {
         initial="offscreen"
         whileInView="onscreen"
         viewport={{ once: true, amount: 0.8 }}
-        variants={opacityVariants}
+        variants={opacity}
         className="flex flex-col lg:flex-row lg:justify-between items-center mt-40 lg:w-11/12 lg:mx-auto gap-y-8 lg:gap-y-0"
       >
         {quicklinks.map((item) => (

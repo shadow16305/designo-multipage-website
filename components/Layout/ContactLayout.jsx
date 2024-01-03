@@ -4,13 +4,21 @@ import CardWrapper from "../UI/CardWrapper";
 import Form from "./Form";
 import { fromBottom } from "@/Tools/variants";
 
+const isMobile = window.innerWidth < 768;
+
+let cardPositionBottom = {};
+
+if (!isMobile) {
+  cardPositionBottom = fromBottom;
+}
+
 const ContactLayout = () => {
   return (
     <motion.div
       initial="offscreen"
       whileInView="onscreen"
       viewport={{ once: true, amount: 0.8 }}
-      variants={fromBottom}
+      variants={cardPositionBottom}
       className="mt-24 lg:mt-40"
     >
       <CardWrapper className="flex flex-col lg:flex-row lg:justify-between gap-y-20 lg:gap-y-0 bg-peach px-24 py-32">
